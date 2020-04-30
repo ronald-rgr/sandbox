@@ -1,6 +1,6 @@
 ---
 kind: 'Template'
-apiVersion: 'v1'
+apiVersion: 'template.openshift.io/v1'
 metadata:
   name: 'cronjob-${JOB_NAME}'
   annotations:
@@ -31,7 +31,7 @@ objects:
             spec:
               containers:
                 - name: '${JOB_NAME}'
-                  image: 'docker-registry.default.svc:5000/${IMAGE_NAMESPACE}/${IMAGE_NAME}'
+                  image: 'image-registry.openshift-image-registry.svc:5000/${IMAGE_NAMESPACE}/${IMAGE_NAME}'
                   command:
                     - 'npm'
                     - 'run'
@@ -45,6 +45,7 @@ parameters:
   - name: 'NAMESPACE'
     displayName: 'Namespace'
     description: 'Name of the Namespace where to deploy the Scheduled Job'
+    value: 'tools'
     required: true
   - name: 'JOB_NAME'
     displayName: 'Job Name'
