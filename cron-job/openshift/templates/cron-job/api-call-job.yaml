@@ -35,7 +35,7 @@ objects:
                   command:
                     - 'npm'
                     - 'run'
-                    - 'externalapi'
+                    - 'externalapicall'
                   #env:
               restartPolicy: 'Never'
               terminationGracePeriodSeconds: 30

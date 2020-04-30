@@ -1,1 +1,1 @@
-console.log("Cron job is running ...!\n");
+console.log(`Cron job is running ... ${new Date()} \n`);

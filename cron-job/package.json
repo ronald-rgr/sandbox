@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "externalapi": "node build/scripts/externalapi.js"
+    "externalapicall": "node scripts/externalapi.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/bcgov/bctw-api/issues"
   },
-  "homepage": "https://github.com/bcgov/bctw-api#readme"
+  "homepage": "https://github.com/bcgov/bctw-api#readme",
+  "dependencies": {}
 }
