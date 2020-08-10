@@ -3,7 +3,7 @@
 ## Build Custom Jenkins Image
 Run the following command to build custom Jenkins image.  Namespace and base image can be changed using parameters specified in bc.yaml.  Additional plugins can be added to plugins.txt
 ```
-oc -n c2mvws-tools process -f "https://raw.githubusercontent.com/bcgov/EDUC-INFRA-COMMON/master/jenkins/openshift/bc.yaml" -p NAMESPACE=c2mvws-tools -o yaml | oc -n c2mvws-tools create -f -
+oc -n jds-filing-tools process -f "https://raw.githubusercontent.com/ronald-rgr/sandbox/master/jenkins/openshift/bc.yaml" -p NAMESPACE=jds-filing-tools -o yaml | oc -n jds-filing-tools create -f -
 ```
 
 ## Start Jenkins Build

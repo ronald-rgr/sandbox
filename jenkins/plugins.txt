@@ -1,2 +1,2 @@
-nodejs:latest
+slack:latest
 http_request:latest
