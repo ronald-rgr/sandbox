@@ -70,7 +70,7 @@
         ],
         "resources": {
           "requests": {
-            "storage": "1Gi"
+            "storage": "512Mi"
           }
         }
       }
@@ -159,12 +159,12 @@
             },
             "resources": {
               "limits": {
-                "cpu": "100m",
+                "cpu": "200m",
                 "memory": "${MEMORY_LIMIT}"
               },
               "requests": {
-                "cpu": "1",
-                "memory": "1Gi"
+                "cpu": "100m",
+                "memory": "512Mi"
               }
             },
             "securityContext": {
