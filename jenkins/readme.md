@@ -16,7 +16,7 @@ oc -n jds-filing-tools start-build bc/jenkins-custom-build
 This creates everything required for Jenkins instance.  It also creates a pvc for maven slaves. 
 This deployment occasionally take a very long time. If it timesout, try redeploying it.
 ```
-oc -n c2mvws-tools process -f "https://raw.githubusercontent.com/bcgov/EDUC-INFRA-COMMON/master/jenkins/openshift/dc.json" -p NAMESPACE=c2mvws-tools -o yaml | oc -n c2mvws-tools create -f -
+oc -n jds-filing-tools process -f "https://raw.githubusercontent.com/ronald-rgr/sandbox/master/jenkins/openshift/dc.json" -p NAMESPACE=jds-filing-tools -o yaml | oc -n jds-filing-tools create -f -
 ```
 
 ## Grant Jenkins Access to all Namespaces
