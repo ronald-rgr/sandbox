@@ -9,7 +9,7 @@ oc -n jds-filing-tools process -f "https://raw.githubusercontent.com/ronald-rgr/
 ## Start Jenkins Build
 This step can take a minute or two.  Make sure it has completed successfully in OpenShift before starting the next step.
 ```
-oc -n c2mvws-tools start-build bc/jenkins-custom-build
+oc -n jds-filing-tools start-build bc/jenkins-custom-build
 ```
 
 ## Deploy Jenkins
