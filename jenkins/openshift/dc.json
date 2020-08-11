@@ -157,16 +157,6 @@
               "initialDelaySeconds": 3,
               "timeoutSeconds": 240
             },
-            "resources": {
-              "limits": {
-                "cpu": "200m",
-                "memory": "${MEMORY_LIMIT}"
-              },
-              "requests": {
-                "cpu": "100m",
-                "memory": "512Mi"
-              }
-            },
             "securityContext": {
               "capabilities": {},
               "privileged": false
