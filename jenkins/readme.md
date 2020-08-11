@@ -1,9 +1,13 @@
 # Jenkins Setup and Installation 
 
+# Get Jenkins image 
+Run the following command to import the Jenkins image into the jds-filing-tools namespace.
+oc import-image openshift3/jenkins-2-rhel7 --from=registry.access.redhat.com/openshift3/jenkins-2-rhel7 --confirm
+
 ## Build Custom Jenkins Image
 Run the following command to build custom Jenkins image.  Namespace and base image can be changed using parameters specified in bc.yaml.  Additional plugins can be added to plugins.txt
 ```
-oc -n jds-filing-tools process -f "https://raw.githubusercontent.com/ronald-rgr/sandbox/master/jenkins/openshift/bc.yaml" -p NAMESPACE=jds-filing-tools -o yaml | oc -n jds-filing-tools create -f -
+oc -n jds-filing-tools process -f "https://raw.githubusercontent.com/ronald-rgr/sandbox/master/jenkins/openshift/bc.yaml" -p NAMESPACE=jds-filing-tools -p BASE_IMAGE_NAMESPACE=jds-filing-tools -o yaml | oc -n jds-filing-tools create -f -
 ```
 
 ## Start Jenkins Build
@@ -18,12 +22,6 @@ This deployment occasionally take a very long time. If it timesout, try redeploy
 ```
 oc -n jds-filing-tools process -f "https://raw.githubusercontent.com/ronald-rgr/sandbox/master/jenkins/openshift/dc.json" -p NAMESPACE=jds-filing-tools -o yaml | oc -n jds-filing-tools create -f -
 ```
-
-## Grant Jenkins Access to all Namespaces
-```
-oc -n c2mvws-dev policy add-role-to-user admin system:serviceaccount:c2mvws-tools:jenkins
-oc -n c2mvws-test policy add-role-to-user admin system:serviceaccount:c2mvws-tools:jenkins
-oc -n c2mvws-prod policy add-role-to-user admin system:serviceaccount:c2mvws-tools:jenkins
 ```
 
 ## Clean Up
