@@ -2,8 +2,9 @@
 
 # Get Jenkins image 
 Run the following command to import the Jenkins image into the jds-filing-tools namespace.
+```
 oc import-image openshift3/jenkins-2-rhel7 --from=registry.access.redhat.com/openshift3/jenkins-2-rhel7 --confirm
-
+```
 ## Build Custom Jenkins Image
 Run the following command to build custom Jenkins image.  Namespace and base image can be changed using parameters specified in bc.yaml.  Additional plugins can be added to plugins.txt
 ```
