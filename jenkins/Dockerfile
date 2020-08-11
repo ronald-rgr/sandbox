@@ -1,5 +1,5 @@
 #FROM openshift/jenkins:latest
-FROM openshift3/jenkins-2-rhel7:latest 
+FROM jds-sandbox/jenkins-2-rhel7:latest 
 USER 0
 COPY plugins.txt /plugins.txt
 RUN /usr/local/bin/install-plugins.sh /plugins.txt
