@@ -22,6 +22,12 @@ This deployment occasionally take a very long time. If it timesout, try redeploy
 ```
 oc -n jds-filing-tools process -f "https://raw.githubusercontent.com/ronald-rgr/sandbox/master/jenkins/openshift/dc.json" -p NAMESPACE=jds-filing-tools -o yaml | oc -n jds-filing-tools create -f -
 ```
+
+## Grant Jenkins Access to all Namespaces
+```
+oc policy add-role-to-user edit system:serviceaccount:jds-filing-tools:jenkins-custom -n jds-filing-dev
+oc policy add-role-to-user edit system:serviceaccount:jds-filing-tools:jenkins-custom -n jds-filing-test
+oc policy add-role-to-user edit system:serviceaccount:jds-filing-tools:jenkins-custom -n jds-filing-prod
 ```
 
 ## Clean Up
